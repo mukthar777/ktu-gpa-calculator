@@ -1,0 +1,864 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CGPA  Calculator EC</title>
+
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="navbar">
+        <div class="main-heading">KTU - GPA Calculator 2019 Scheme</div>
+        <div class="sub-heading">Electronics & Communication Engineering</div>
+    </div>
+    <div class="result-box">
+        <div>
+            <button class="cgpa-btn" id="calculate-cgpa-btn" onclick="calculateCGPA()">Calculate CGPA</button>
+            <div id="result-container">
+                <div>
+                    <strong>CGPA:</strong> <span id="cgpa-result">-</span>
+                </div>
+                <div>
+                    <strong>Percentage:</strong> <span id="percentage">-</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    
+    
+<div class="container" id="sem1">
+    <h3>Semester 1 </h3>
+    <table>
+        <thead>
+            <tr>
+                <th class="sl-no">Sl. No.</th>
+                <th class="subject">Subject</th>
+                <th class="credit">Credit</th>
+                <th class="grade">Grade</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Semester 1 -->
+            <tr>
+                <td class="sl-no">1</td>
+                <td class="subject">LINEAR ALGEBRA AND CALCULUS</td>
+                <td class="credit"><input type="text" placeholder="Credit" value="4" disabled></td>
+                <td class="grade">
+                    <select>
+                        <option value="S">S</option>
+                        <option value="A+">A+</option>
+                        <option value="A">A</option>
+                        <option value="B+">B+</option>
+                        <option value="B">B</option>
+                        <option value="C+">C+</option>
+                        <option value="C">C</option>
+                        <option value="D">D</option>
+                        <option value="P">P</option>
+                        <option value="F">F</option>
+                    </select>
+                </td>            </tr>
+            <!-- Add 6 more subjects -->
+            <tr>
+                <td class="sl-no">2</td>
+                <td class="subject">ENGINEERING PHYSICS A / ENGINEERING CHEMISTRY</td>
+                <td class="credit"><input type="text" placeholder="Credit" value="4" disabled></td>
+                <td class="grade">
+                    <select>
+                        <option value="S">S</option>
+                        <option value="A+">A+</option>
+                        <option value="A">A</option>
+                        <option value="B+">B+</option>
+                        <option value="B">B</option>
+                        <option value="C+">C+</option>
+                        <option value="C">C</option>
+                        <option value="D">D</option>
+                        <option value="P">P</option>
+                        <option value="F">F</option>
+                    </select>
+                </td>            </tr>
+            <tr>
+                <td class="sl-no">3</td>
+                <td class="subject">ENGINEERING MECHANICS / ENGINEERING GRAPHICS</td>
+                <td class="credit"><input type="text" placeholder="Credit" value="3" disabled></td>
+                <td class="grade">
+                    <select>
+                        <option value="S">S</option>
+                        <option value="A+">A+</option>
+                        <option value="A">A</option>
+                        <option value="B+">B+</option>
+                        <option value="B">B</option>
+                        <option value="C+">C+</option>
+                        <option value="C">C</option>
+                        <option value="D">D</option>
+                        <option value="P">P</option>
+                        <option value="F">F</option>
+                    </select>
+                </td>            </tr>
+            <tr>
+                <td class="sl-no">4</td>
+                <td class="subject">BASICS OF CIVIL & MECHANICAL ENGINEERING/ BASICS OF ELECTRICAL & ELECTRONICS ENGINEERING</td>
+                <td class="credit"><input type="text" placeholder="Credit" value="4" disabled></td>
+                <td class="grade">
+                    <select>
+                        <option value="S">S</option>
+                        <option value="A+">A+</option>
+                        <option value="A">A</option>
+                        <option value="B+">B+</option>
+                        <option value="B">B</option>
+                        <option value="C+">C+</option>
+                        <option value="C">C</option>
+                        <option value="D">D</option>
+                        <option value="P">P</option>
+                        <option value="F">F</option>
+                    </select>
+                </td>            </tr>
+            <tr>
+                <td class="sl-no">5</td>
+                <td class="subject">ENGINEERING PHYSICS LAB / ENGINEERING CHEMISTRY LAB</td>
+                <td class="credit"><input type="text" placeholder="Credit" value="1" disabled></td>
+                <td class="grade">
+                    <select>
+                        <option value="S">S</option>
+                        <option value="A+">A+</option>
+                        <option value="A">A</option>
+                        <option value="B+">B+</option>
+                        <option value="B">B</option>
+                        <option value="C+">C+</option>
+                        <option value="C">C</option>
+                        <option value="D">D</option>
+                        <option value="P">P</option>
+                        <option value="F">F</option>
+                    </select>
+                </td>            </tr>
+            <tr>
+                <td class="sl-no">6</td>
+                <td class="subject">CIVIL & MECHANICAL WORKSHOP / ELECTRICAL & ELECTRONICS WORKSHOP</td>
+                <td class="credit"><input type="text" placeholder="Credit" value="1" disabled></td>
+                <td class="grade">
+                    <select>
+                        <option value="S">S</option>
+                        <option value="A+">A+</option>
+                        <option value="A">A</option>
+                        <option value="B+">B+</option>
+                        <option value="B">B</option>
+                        <option value="C+">C+</option>
+                        <option value="C">C</option>
+                        <option value="D">D</option>
+                        <option value="P">P</option>
+                        <option value="F">F</option>
+                    </select>
+                </td>            </tr>
+            <!-- End of added subjects -->
+        </tbody>
+    </table>
+    <div class="calculate-wrapper">
+        <button class="clear-button" onclick="clearAll('sem1')">CLEAR</button>
+        <div class="sgpa-wrapper">
+            <input type="text" class="sgpa-input" placeholder="SGPA">
+            <button class="calculate-button" onclick="calculateSGPA('sem1')">Calculate SGPA</button>
+        </div>
+        
+    </div>
+</div>
+<!-- Semester 2 -->
+<div class="container" id="sem2">
+    <h3>Semester 2 </h3>
+    <table>
+        <thead>
+            <tr>
+                <th class="sl-no">Sl. No.</th>
+                <th class="subject">Subject</th>
+                <th class="credit">Credit</th>
+                <th class="grade">Grade</th>
+            </tr>
+        </thead>
+        <tbody>
+            
+            <tr>
+                <td class="sl-no">1</td>
+                <td class="subject">VECTOR CALCULUS , DIFFERENTIAL EQUATIONS AND TRANSFORMS</td>
+                <td class="credit"><input type="text" placeholder="Credit" value="4" disabled></td>
+                <td class="grade">
+                    <select>
+                        <option value="S">S</option>
+                        <option value="A+">A+</option>
+                        <option value="A">A</option>
+                        <option value="B+">B+</option>
+                        <option value="B">B</option>
+                        <option value="C+">C+</option>
+                        <option value="C">C</option>
+                        <option value="D">D</option>
+                        <option value="P">P</option>
+                        <option value="F">F</option>
+                    </select>
+                </td>            </tr>
+            <!-- Add 6 more subjects -->
+            <tr>
+                <td class="sl-no">2</td>
+                <td class="subject">ENGINEERING PHYSICS A / ENGINEERING CHEMISTRY</td>
+                <td class="credit"><input type="text" placeholder="Credit" value="4" disabled></td>
+                <td class="grade">
+                    <select>
+                        <option value="S">S</option>
+                        <option value="A+">A+</option>
+                        <option value="A">A</option>
+                        <option value="B+">B+</option>
+                        <option value="B">B</option>
+                        <option value="C+">C+</option>
+                        <option value="C">C</option>
+                        <option value="D">D</option>
+                        <option value="P">P</option>
+                        <option value="F">F</option>
+                    </select>
+                </td>            </tr>
+            <tr>
+                <td class="sl-no">3</td>
+                <td class="subject">ENGINEERING MECHANICS / ENGINEERING GRAPHICS</td>
+                <td class="credit"><input type="text" placeholder="Credit" value="3" disabled></td>
+                <td class="grade">
+                    <select>
+                        <option value="S">S</option>
+                        <option value="A+">A+</option>
+                        <option value="A">A</option>
+                        <option value="B+">B+</option>
+                        <option value="B">B</option>
+                        <option value="C+">C+</option>
+                        <option value="C">C</option>
+                        <option value="D">D</option>
+                        <option value="P">P</option>
+                        <option value="F">F</option>
+                    </select>
+                </td>            </tr>
+            <tr>
+                <td class="sl-no">4</td>
+                <td class="subject">BASICS OF CIVIL & MECHANICAL ENGINEERING/ BASICS OF ELECTRICAL & ELECTRONICS ENGINEERING</td>
+                <td class="credit"><input type="text" placeholder="Credit" value="4" disabled></td>
+                <td class="grade">
+                    <select>
+                        <option value="S">S</option>
+                        <option value="A+">A+</option>
+                        <option value="A">A</option>
+                        <option value="B+">B+</option>
+                        <option value="B">B</option>
+                        <option value="C+">C+</option>
+                        <option value="C">C</option>
+                        <option value="D">D</option>
+                        <option value="P">P</option>
+                        <option value="F">F</option>
+                    </select>
+                </td>            </tr>
+                <tr>
+                    <td class="sl-no">7</td>
+                    <td class="subject">PROGRAMMING IN C</td>
+                    <td class="credit"><input type="text" placeholder="Credit" value="4" disabled></td>
+                    <td class="grade">
+                        <select>
+                            <option value="S">S</option>
+                            <option value="A+">A+</option>
+                            <option value="A">A</option>
+                            <option value="B+">B+</option>
+                            <option value="B">B</option>
+                            <option value="C+">C+</option>
+                            <option value="C">C</option>
+                            <option value="D">D</option>
+                            <option value="P">P</option>
+                            <option value="F">F</option>
+                        </select>
+                    </td>            </tr>
+            <tr>
+                <td class="sl-no">5</td>
+                <td class="subject">ENGINEERING PHYSICS LAB / ENGINEERING CHEMISTRY LAB</td>
+                <td class="credit"><input type="text" placeholder="Credit" value="1" disabled></td>
+                <td class="grade">
+                    <select>
+                        <option value="S">S</option>
+                        <option value="A+">A+</option>
+                        <option value="A">A</option>
+                        <option value="B+">B+</option>
+                        <option value="B">B</option>
+                        <option value="C+">C+</option>
+                        <option value="C">C</option>
+                        <option value="D">D</option>
+                        <option value="P">P</option>
+                        <option value="F">F</option>
+                    </select>
+                </td>            </tr>
+            <tr>
+                <td class="sl-no">6</td>
+                <td class="subject">CIVIL & MECHANICAL WORKSHOP / ELECTRICAL & ELECTRONICS WORKSHOP</td>
+                <td class="credit"><input type="text" placeholder="Credit" value="1" disabled></td>
+                <td class="grade">
+                    <select>
+                        <option value="S">S</option>
+                        <option value="A+">A+</option>
+                        <option value="A">A</option>
+                        <option value="B+">B+</option>
+                        <option value="B">B</option>
+                        <option value="C+">C+</option>
+                        <option value="C">C</option>
+                        <option value="D">D</option>
+                        <option value="P">P</option>
+                        <option value="F">F</option>
+                    </select>
+                </td>            </tr>
+                
+            <!-- End of added subjects -->
+        </tbody>
+    </table>
+    <div class="calculate-wrapper">
+        <button class="clear-button" onclick="clearAll('sem2')">CLEAR</button>
+        <div class="sgpa-wrapper">
+            <input type="text" class="sgpa-input" placeholder="SGPA">
+            <button class="calculate-button" onclick="calculateSGPA('sem2')">Calculate SGPA</button>
+        </div>
+        
+    </div>
+</div>
+
+<!-- semester3 -->
+<div class="container"  id="sem3">
+    <h3>Semester 3 </h3>
+    <table>
+        <thead>
+            <tr>
+                <th class="sl-no">Sl. No.</th>
+                <th class="subject">Subject</th>
+                <th class="credit">Credit</th>
+                <th class="grade">Grade</th>
+            </tr>
+        </thead>
+        <tbody>
+            
+            <tr>
+                <td class="sl-no">1</td>
+                <td class="subject">PARTIAL DIFFERENTIAL EQUATION AND COMPLEX ANALYSIS</td>
+                <td class="credit"><input type="text" placeholder="Credit" value="4" disabled></td>
+                <td class="grade">
+                    <select>
+                            <option value="S">S</option><option value="A+">A+</option><option value="A">A</option><option value="B+">B+</option><option value="B">B</option><option value="C+">C+</option><option value="C">C</option><option value="D">D</option><option value="P">P</option><option value="F">F</option>
+                        </select>
+                </td>            </tr>
+            <tr>
+                <td class="sl-no">2</td>
+                <td class="subject">SOLID STATE DEVICES </td>
+                <td class="credit"><input type="text" placeholder="Credit" value="4" disabled></td>
+                <td class="grade">
+                    <select>
+                            <option value="S">S</option><option value="A+">A+</option><option value="A">A</option><option value="B+">B+</option><option value="B">B</option><option value="C+">C+</option><option value="C">C</option><option value="D">D</option><option value="P">P</option><option value="F">F</option>
+                        </select>
+                </td>            </tr>
+            <tr>
+                <td class="sl-no">3</td>
+                <td class="subject">LOGIC CIRCUIT DESIGN </td>
+                <td class="credit"><input type="text" placeholder="Credit" value="4" disabled></td>
+                <td class="grade">
+                    <select>
+                            <option value="S">S</option><option value="A+">A+</option><option value="A">A</option><option value="B+">B+</option><option value="B">B</option><option value="C+">C+</option><option value="C">C</option><option value="D">D</option><option value="P">P</option><option value="F">F</option>
+                        </select>
+                </td>            </tr>
+            <tr>
+                <td class="sl-no">4</td>
+                <td class="subject">NETWORK THEORY</td>
+                <td class="credit"><input type="text" placeholder="Credit" value="4" disabled></td>
+                <td class="grade">
+                    <select>
+                            <option value="S">S</option><option value="A+">A+</option><option value="A">A</option><option value="B+">B+</option><option value="B">B</option><option value="C+">C+</option><option value="C">C</option><option value="D">D</option><option value="P">P</option><option value="F">F</option>
+                        </select>
+                </td>            </tr>
+            <tr>
+                <td class="sl-no">5</td>
+                <td class="subject">DESIGN & ENGINEERING / PROFESSIONAL ETHICS </td>
+                <td class="credit"><input type="text" placeholder="Credit" value="2" disabled></td>
+                <td class="grade">
+                    <select>
+                            <option value="S">S</option><option value="A+">A+</option><option value="A">A</option><option value="B+">B+</option><option value="B">B</option><option value="C+">C+</option><option value="C">C</option><option value="D">D</option><option value="P">P</option><option value="F">F</option>
+                        </select>
+                </td>            </tr>
+            <tr>
+                <td class="sl-no">6</td>
+                <td class="subject">SCIENTIFIC COMPUTING LAB</td>
+                <td class="credit"><input type="text" placeholder="Credit" value="2" disabled></td>
+                <td class="grade">
+                    <select>
+                            <option value="S">S</option><option value="A+">A+</option><option value="A">A</option><option value="B+">B+</option><option value="B">B</option><option value="C+">C+</option><option value="C">C</option><option value="D">D</option><option value="P">P</option><option value="F">F</option>
+                        </select>
+                </td>            </tr>
+                <tr>
+                    <td class="sl-no">7</td>
+                    <td class="subject">LOGIC DESIGN LAB </td>
+                    <td class="credit"><input type="text" placeholder="Credit" value="2" disabled></td>
+                    <td class="grade">
+                        <select>
+                            <option value="S">S</option><option value="A+">A+</option><option value="A">A</option><option value="B+">B+</option><option value="B">B</option><option value="C+">C+</option><option value="C">C</option><option value="D">D</option><option value="P">P</option><option value="F">F</option>
+                        </select>
+                    </td>            </tr>
+            <!-- End of added subjects -->
+        </tbody>
+    </table>
+    <div class="calculate-wrapper">
+        <button class="clear-button" onclick="clearAll('sem3')">CLEAR</button>
+        <div class="sgpa-wrapper">
+            <input type="text" class="sgpa-input" placeholder="SGPA">
+            <button class="calculate-button" onclick="calculateSGPA('sem3')">Calculate SGPA</button>
+        </div>
+        
+    </div>
+</div>
+<!-- semester4 -->
+<div class="container" id="sem4">
+    <h3>Semester 4 </h3>
+    <table>
+        <thead>
+            <tr>
+                <th class="sl-no">Sl. No.</th>
+                <th class="subject">Subject</th>
+                <th class="credit">Credit</th>
+                <th class="grade">Grade</th>
+            </tr>
+        </thead>
+        <tbody>
+            
+            <tr>
+                <td class="sl-no">1</td>
+                <td class="subject">PROBABILITY, RANDOM PROCESS AND NUMERICAL METHODS</td>
+                <td class="credit"><input type="text" placeholder="Credit" value="4" disabled></td>
+                <td class="grade">
+                    <select>
+                            <option value="S">S</option><option value="A+">A+</option><option value="A">A</option><option value="B+">B+</option><option value="B">B</option><option value="C+">C+</option><option value="C">C</option><option value="D">D</option><option value="P">P</option><option value="F">F</option>
+                        </select>
+                </td>            </tr>
+            
+            <tr>
+                <td class="sl-no">2</td>
+                <td class="subject">ANALOG CIRCUITS</td>
+                <td class="credit"><input type="text" placeholder="Credit" value="4" disabled></td>
+                <td class="grade">
+                    <select>
+                            <option value="S">S</option><option value="A+">A+</option><option value="A">A</option><option value="B+">B+</option><option value="B">B</option><option value="C+">C+</option><option value="C">C</option><option value="D">D</option><option value="P">P</option><option value="F">F</option>
+                        </select>
+                </td>            </tr>
+            <tr>
+                <td class="sl-no">3</td>
+                <td class="subject">SIGNALS AND SYSTEMS </td>
+                <td class="credit"><input type="text" placeholder="Credit" value="4" disabled></td>
+                <td class="grade">
+                    <select>
+                            <option value="S">S</option><option value="A+">A+</option><option value="A">A</option><option value="B+">B+</option><option value="B">B</option><option value="C+">C+</option><option value="C">C</option><option value="D">D</option><option value="P">P</option><option value="F">F</option>
+                        </select>
+                </td>            </tr>
+            <tr>
+                <td class="sl-no">4</td>
+                <td class="subject">COMPUTER ARCHITECTURE AND MICROCONTROLLERS</td>
+                <td class="credit"><input type="text" placeholder="Credit" value="4" disabled></td>
+                <td class="grade">
+                    <select>
+                            <option value="S">S</option><option value="A+">A+</option><option value="A">A</option><option value="B+">B+</option><option value="B">B</option><option value="C+">C+</option><option value="C">C</option><option value="D">D</option><option value="P">P</option><option value="F">F</option>
+                        </select>
+                </td>            </tr>
+            <tr>
+                <td class="sl-no">5</td>
+                <td class="subject">DESIGN & ENGINEERING / PROFESSIONAL ETHICS </td>
+                <td class="credit"><input type="text" placeholder="Credit" value="2" disabled></td>
+                <td class="grade">
+                    <select>
+                            <option value="S">S</option><option value="A+">A+</option><option value="A">A</option><option value="B+">B+</option><option value="B">B</option><option value="C+">C+</option><option value="C">C</option><option value="D">D</option><option value="P">P</option><option value="F">F</option>
+                        </select>
+                </td>            </tr>
+            <tr>
+                <td class="sl-no">6</td>
+                <td class="subject">ANALOG CIRCUITS AND SIMULATION LAB </td>
+                <td class="credit"><input type="text" placeholder="Credit" value="2" disabled></td>
+                <td class="grade">
+                    <select>
+                            <option value="S">S</option><option value="A+">A+</option><option value="A">A</option><option value="B+">B+</option><option value="B">B</option><option value="C+">C+</option><option value="C">C</option><option value="D">D</option><option value="P">P</option><option value="F">F</option>
+                        </select>
+                </td>            </tr>
+                <tr>
+                    <td class="sl-no">7</td>
+                    <td class="subject">MICROCONTROLLER LAB</td>
+                    <td class="credit"><input type="text" placeholder="Credit" value="2" disabled></td>
+                    <td class="grade">
+                        <select>
+                            <option value="S">S</option><option value="A+">A+</option><option value="A">A</option><option value="B+">B+</option><option value="B">B</option><option value="C+">C+</option><option value="C">C</option><option value="D">D</option><option value="P">P</option><option value="F">F</option>
+                        </select>
+                    </td>            </tr>
+            <!-- End of added subjects -->
+        </tbody>
+    </table>
+    <div class="calculate-wrapper">
+        <button class="clear-button" onclick="clearAll('sem4')">CLEAR</button>
+        <div class="sgpa-wrapper">
+            <input type="text" class="sgpa-input" placeholder="SGPA">
+            <button class="calculate-button" onclick="calculateSGPA('sem4')">Calculate SGPA</button>
+        </div>
+        
+    </div>
+</div>
+
+<!-- semester5 -->
+<div class="container" id="sem5">
+    <h3>Semester 5 </h3>
+    <table>
+        <thead>
+            <tr>
+                <th class="sl-no">Sl. No.</th>
+                <th class="subject">Subject</th>
+                <th class="credit">Credit</th>
+                <th class="grade">Grade</th>
+            </tr>
+        </thead>
+        <tbody>
+            
+            <tr>
+                <td class="sl-no">1</td>
+                <td class="subject">LINEAR INTEGRATED CIRCUITS</td>
+                <td class="credit"><input type="text" placeholder="Credit" value="4" disabled></td>
+                <td class="grade">
+                    <select>
+                            <option value="S">S</option><option value="A+">A+</option><option value="A">A</option><option value="B+">B+</option><option value="B">B</option><option value="C+">C+</option><option value="C">C</option><option value="D">D</option><option value="P">P</option><option value="F">F</option>
+                        </select>
+                </td>            </tr>
+            <!-- Add 6 more subjects -->
+            <tr>
+                <td class="sl-no">2</td>
+                <td class="subject">DIGITAL SIGNAL PROCESSING</td>
+                <td class="credit"><input type="text" placeholder="Credit" value="4" disabled></td>
+                <td class="grade">
+                    <select>
+                            <option value="S">S</option><option value="A+">A+</option><option value="A">A</option><option value="B+">B+</option><option value="B">B</option><option value="C+">C+</option><option value="C">C</option><option value="D">D</option><option value="P">P</option><option value="F">F</option>
+                        </select>
+                </td>            </tr>
+            <tr>
+                <td class="sl-no">3</td>
+                <td class="subject">ANALOG AND DIGITAL  COMMUNICATION</td>
+                <td class="credit"><input type="text" placeholder="Credit" value="4" disabled></td>
+                <td class="grade">
+                    <select>
+                            <option value="S">S</option><option value="A+">A+</option><option value="A">A</option><option value="B+">B+</option><option value="B">B</option><option value="C+">C+</option><option value="C">C</option><option value="D">D</option><option value="P">P</option><option value="F">F</option>
+                        </select>
+                </td>            </tr>
+            <tr>
+                <td class="sl-no">4</td>
+                <td class="subject">CONTROL SYSTEMS</td>
+                <td class="credit"><input type="text" placeholder="Credit" value="4" disabled></td>
+                <td class="grade">
+                    <select>
+                            <option value="S">S</option><option value="A+">A+</option><option value="A">A</option><option value="B+">B+</option><option value="B">B</option><option value="C+">C+</option><option value="C">C</option><option value="D">D</option><option value="P">P</option><option value="F">F</option>
+                        </select>
+                </td>            </tr>
+            <tr>
+                <td class="sl-no">5</td>
+                <td class="subject">MANAGEMENT FOR ENGINEERS / INDUSTRIAL ECONOMICS AND FOREIGN TRADE</td>
+                <td class="credit"><input type="text" placeholder="Credit" value="3" disabled></td>
+                <td class="grade">
+                    <select>
+                            <option value="S">S</option><option value="A+">A+</option><option value="A">A</option><option value="B+">B+</option><option value="B">B</option><option value="C+">C+</option><option value="C">C</option><option value="D">D</option><option value="P">P</option><option value="F">F</option>
+                        </select>
+                </td>            </tr>
+            <tr>
+                <td class="sl-no">6</td>
+                <td class="subject">ANALOG INTEGRATED CIRCUITS AND SIMULATION LAB</td>
+                <td class="credit"><input type="text" placeholder="Credit" value="2" disabled></td>
+                <td class="grade">
+                    <select>
+                            <option value="S">S</option><option value="A+">A+</option><option value="A">A</option><option value="B+">B+</option><option value="B">B</option><option value="C+">C+</option><option value="C">C</option><option value="D">D</option><option value="P">P</option><option value="F">F</option>
+                        </select>
+                </td>            </tr>
+                <tr>
+                    <td class="sl-no">7</td>
+                    <td class="subject">DIGITAL SIGNAL PROCESSING LAB</td>
+                    <td class="credit"><input type="text" placeholder="Credit" value="2" disabled></td>
+                    <td class="grade">
+                        <select>
+                            <option value="S">S</option><option value="A+">A+</option><option value="A">A</option><option value="B+">B+</option><option value="B">B</option><option value="C+">C+</option><option value="C">C</option><option value="D">D</option><option value="P">P</option><option value="F">F</option>
+                        </select>
+                    </td>            </tr>
+            <!-- End of added subjects -->
+        </tbody>
+    </table>
+    <div class="calculate-wrapper">
+        <button class="clear-button" onclick="clearAll('sem5')">CLEAR</button>
+        <div class="sgpa-wrapper">
+            <input type="text" class="sgpa-input" placeholder="SGPA">
+            <button class="calculate-button" onclick="calculateSGPA('sem5')">Calculate SGPA</button>
+        </div>
+        
+    </div>
+</div>
+<!-- semester6 -->
+<div class="container" id="sem6">
+    <h3>Semester 6 </h3>
+    <table>
+        <thead>
+            <tr>
+                <th class="sl-no">Sl. No.</th>
+                <th class="subject">Subject</th>
+                <th class="credit">Credit</th>
+                <th class="grade">Grade</th>
+            </tr>
+        </thead>
+        <tbody>
+            
+            <tr>
+                <td class="sl-no">1</td>
+                <td class="subject">ELECTROMAGNETICS</td>
+                <td class="credit"><input type="text" placeholder="Credit" value="4" disabled></td>
+                <td class="grade">
+                    <select>
+                            <option value="S">S</option><option value="A+">A+</option><option value="A">A</option><option value="B+">B+</option><option value="B">B</option><option value="C+">C+</option><option value="C">C</option><option value="D">D</option><option value="P">P</option><option value="F">F</option>
+                        </select>
+                </td>            </tr>
+            
+            <tr>
+                <td class="sl-no">2</td>
+                <td class="subject">VLSI CIRCUIT DESIGN </td>
+                <td class="credit"><input type="text" placeholder="Credit" value="4" disabled></td>
+                <td class="grade">
+                    <select>
+                            <option value="S">S</option><option value="A+">A+</option><option value="A">A</option><option value="B+">B+</option><option value="B">B</option><option value="C+">C+</option><option value="C">C</option><option value="D">D</option><option value="P">P</option><option value="F">F</option>
+                        </select>
+                </td>            </tr>
+            <tr>
+                <td class="sl-no">3</td>
+                <td class="subject">INFORMATION THEORY AND CODING</td>
+                <td class="credit"><input type="text" placeholder="Credit" value="4" disabled></td>
+                <td class="grade">
+                    <select>
+                            <option value="S">S</option><option value="A+">A+</option><option value="A">A</option><option value="B+">B+</option><option value="B">B</option><option value="C+">C+</option><option value="C">C</option><option value="D">D</option><option value="P">P</option><option value="F">F</option>
+                        </select>
+                </td>            </tr>
+            <tr>
+                <td class="sl-no">4</td>
+                <td class="subject">PROGRAM ELECTIVE I </td>
+                <td class="credit"><input type="text" placeholder="Credit" value="3" disabled></td>
+                <td class="grade">
+                    <select>
+                            <option value="S">S</option><option value="A+">A+</option><option value="A">A</option><option value="B+">B+</option><option value="B">B</option><option value="C+">C+</option><option value="C">C</option><option value="D">D</option><option value="P">P</option><option value="F">F</option>
+                        </select>
+                </td>            </tr>
+            <tr>
+                <td class="sl-no">5</td>
+                <td class="subject">MANAGEMENT FOR ENGINEERS / INDUSTRIAL ECONOMICS AND FOREIGN TRADE</td>
+                <td class="credit"><input type="text" placeholder="Credit" value="3" disabled></td>
+                <td class="grade">
+                    <select>
+                            <option value="S">S</option><option value="A+">A+</option><option value="A">A</option><option value="B+">B+</option><option value="B">B</option><option value="C+">C+</option><option value="C">C</option><option value="D">D</option><option value="P">P</option><option value="F">F</option>
+                        </select>
+                </td>            </tr>
+            <tr>
+                <td class="sl-no">6</td>
+                <td class="subject">COMPREHENSIVE COURSE WORK</td>
+                <td class="credit"><input type="text" placeholder="Credit" value="1" disabled></td>
+                <td class="grade">
+                    <select>
+                            <option value="S">S</option><option value="A+">A+</option><option value="A">A</option><option value="B+">B+</option><option value="B">B</option><option value="C+">C+</option><option value="C">C</option><option value="D">D</option><option value="P">P</option><option value="F">F</option>
+                        </select>
+                </td>            </tr>
+                <tr>
+                    <td class="sl-no">7</td>
+                    <td class="subject">COMMUNICATION LAB</td>
+                    <td class="credit"><input type="text" placeholder="Credit" value="2" disabled></td>
+                    <td class="grade">
+                        <select>
+                            <option value="S">S</option><option value="A+">A+</option><option value="A">A</option><option value="B+">B+</option><option value="B">B</option><option value="C+">C+</option><option value="C">C</option><option value="D">D</option><option value="P">P</option><option value="F">F</option>
+                        </select>
+                    </td>            </tr>
+                    <tr>
+                        <td class="sl-no">8</td>
+                        <td class="subject">MINIPROJECT</td>
+                        <td class="credit"><input type="text" placeholder="Credit" value="2" disabled></td>
+                        <td class="grade">
+                            <select>
+                                <option value="S">S</option><option value="A+">A+</option><option value="A">A</option><option value="B+">B+</option><option value="B">B</option><option value="C+">C+</option><option value="C">C</option><option value="D">D</option><option value="P">P</option><option value="F">F</option>
+                            </select>
+                        </td>            </tr>
+            <!-- End of added subjects -->
+        </tbody>
+    </table>
+    <div class="calculate-wrapper">
+        <button class="clear-button" onclick="clearAll('sem6')">CLEAR</button>
+        <div class="sgpa-wrapper">
+            <input type="text" class="sgpa-input" placeholder="SGPA">
+            <button class="calculate-button" onclick="calculateSGPA('sem6')">Calculate SGPA</button>
+        </div>
+        
+    </div>
+</div>
+<!-- semester7 -->
+<div class="container" id="sem7">
+    <h3>Semester 7 </h3>
+    <table>
+        <thead>
+            <tr>
+                <th class="sl-no">Sl. No.</th>
+                <th class="subject">Subject</th>
+                <th class="credit">Credit</th>
+                <th class="grade">Grade</th>
+            </tr>
+        </thead>
+        <tbody>
+            
+            <tr>
+                <td class="sl-no">1</td>
+                <td class="subject">WIRELESS COMMUNICATION </td>
+                <td class="credit"><input type="text" placeholder="Credit" value="3" disabled></td>
+                <td class="grade">
+                    <select>
+                            <option value="S">S</option><option value="A+">A+</option><option value="A">A</option><option value="B+">B+</option><option value="B">B</option><option value="C+">C+</option><option value="C">C</option><option value="D">D</option><option value="P">P</option><option value="F">F</option>
+                        </select>
+                </td>            </tr>
+            <!-- Add 6 more subjects -->
+            <tr>
+                <td class="sl-no">2</td>
+                <td class="subject">PROGRAM ELECTIVE II </td>
+                <td class="credit"><input type="text" placeholder="Credit" value="3" disabled></td>
+                <td class="grade">
+                    <select>
+                            <option value="S">S</option><option value="A+">A+</option><option value="A">A</option><option value="B+">B+</option><option value="B">B</option><option value="C+">C+</option><option value="C">C</option><option value="D">D</option><option value="P">P</option><option value="F">F</option>
+                        </select>
+                </td>            </tr>
+            <tr>
+                <td class="sl-no">3</td>
+                <td class="subject">OPEN ELECTIVE </td>
+                <td class="credit"><input type="text" placeholder="Credit" value="3" disabled></td>
+                <td class="grade">
+                    <select>
+                            <option value="S">S</option><option value="A+">A+</option><option value="A">A</option><option value="B+">B+</option><option value="B">B</option><option value="C+">C+</option><option value="C">C</option><option value="D">D</option><option value="P">P</option><option value="F">F</option>
+                        </select>
+                </td>            </tr>
+            <tr>
+                <td class="sl-no">4</td>
+                <td class="subject">ELECTROMAGNETICS LAB</td>
+                <td class="credit"><input type="text" placeholder="Credit" value="2" disabled></td>
+                <td class="grade">
+                    <select>
+                            <option value="S">S</option><option value="A+">A+</option><option value="A">A</option><option value="B+">B+</option><option value="B">B</option><option value="C+">C+</option><option value="C">C</option><option value="D">D</option><option value="P">P</option><option value="F">F</option>
+                        </select>
+                </td>            </tr>
+            <tr>
+                <td class="sl-no">5</td>
+                <td class="subject">SEMINAR </td>
+                <td class="credit"><input type="text" placeholder="Credit" value="2" disabled></td>
+                <td class="grade">
+                    <select>
+                            <option value="S">S</option><option value="A+">A+</option><option value="A">A</option><option value="B+">B+</option><option value="B">B</option><option value="C+">C+</option><option value="C">C</option><option value="D">D</option><option value="P">P</option><option value="F">F</option>
+                        </select>
+                </td>            </tr>
+            <tr>
+                <td class="sl-no">6</td>
+                <td class="subject">PROJECT PHASE I </td>
+                <td class="credit"><input type="text" placeholder="Credit" value="2" disabled></td>
+                <td class="grade">
+                    <select>
+                            <option value="S">S</option><option value="A+">A+</option><option value="A">A</option><option value="B+">B+</option><option value="B">B</option><option value="C+">C+</option><option value="C">C</option><option value="D">D</option><option value="P">P</option><option value="F">F</option>
+                        </select>
+                </td>            </tr>
+                
+            <!-- End of added subjects -->
+        </tbody>
+    </table>
+    <div class="calculate-wrapper">
+        <button class="clear-button" onclick="clearAll('sem7')">CLEAR</button>
+        <div class="sgpa-wrapper">
+            <input type="text" class="sgpa-input" placeholder="SGPA">
+            <button class="calculate-button" onclick="calculateSGPA('sem7')">Calculate SGPA</button>
+        </div>
+        
+    </div>
+</div>
+<!-- semester8 -->
+<div class="container" id="sem8">
+    <h3>Semester 8 </h3>
+    <table>
+        <thead>
+            <tr>
+                <th class="sl-no">Sl. No.</th>
+                <th class="subject">Subject</th>
+                <th class="credit">Credit</th>
+                <th class="grade">Grade</th>
+            </tr>
+        </thead>
+        <tbody>
+            
+            <tr>
+                <td class="sl-no">1</td>
+                <td class="subject">INSTRUMENTATION</td>
+                <td class="credit"><input type="text" placeholder="Credit" value="3" disabled></td>
+                <td class="grade">
+                    <select>
+                            <option value="S">S</option><option value="A+">A+</option><option value="A">A</option><option value="B+">B+</option><option value="B">B</option><option value="C+">C+</option><option value="C">C</option><option value="D">D</option><option value="P">P</option><option value="F">F</option>
+                        </select>
+                </td>            </tr>
+            <!-- Add 6 more subjects -->
+            <tr>
+                <td class="sl-no">2</td>
+                <td class="subject">PROGRAM ELECTIVE III </td>
+                <td class="credit"><input type="text" placeholder="Credit" value="3" disabled></td>
+                <td class="grade">
+                    <select>
+                            <option value="S">S</option><option value="A+">A+</option><option value="A">A</option><option value="B+">B+</option><option value="B">B</option><option value="C+">C+</option><option value="C">C</option><option value="D">D</option><option value="P">P</option><option value="F">F</option>
+                        </select>
+                </td>            </tr>
+            <tr>
+                <td class="sl-no">3</td>
+                <td class="subject">PROGRAM ELECTIVE IV </td>
+                <td class="credit"><input type="text" placeholder="Credit" value="3" disabled></td>
+                <td class="grade">
+                    <select>
+                            <option value="S">S</option><option value="A+">A+</option><option value="A">A</option><option value="B+">B+</option><option value="B">B</option><option value="C+">C+</option><option value="C">C</option><option value="D">D</option><option value="P">P</option><option value="F">F</option>
+                        </select>
+                </td>            </tr>
+            <tr>
+                <td class="sl-no">4</td>
+                <td class="subject">PROGRAM ELECTIVE V </td>
+                <td class="credit"><input type="text" placeholder="Credit" value="3" disabled></td>
+                <td class="grade">
+                    <select>
+                            <option value="S">S</option><option value="A+">A+</option><option value="A">A</option><option value="B+">B+</option><option value="B">B</option><option value="C+">C+</option><option value="C">C</option><option value="D">D</option><option value="P">P</option><option value="F">F</option>
+                        </select>
+                </td>            </tr>
+            <tr>
+                <td class="sl-no">5</td>
+                <td class="subject">COMPREHENSIVE VIVA VOCE</td>
+                <td class="credit"><input type="text" placeholder="Credit" value="1" disabled></td>
+                <td class="grade">
+                    <select>
+                            <option value="S">S</option><option value="A+">A+</option><option value="A">A</option><option value="B+">B+</option><option value="B">B</option><option value="C+">C+</option><option value="C">C</option><option value="D">D</option><option value="P">P</option><option value="F">F</option>
+                        </select>
+                </td>            </tr>
+            <tr>
+                <td class="sl-no">6</td>
+                <td class="subject">PROJECT PHASE II</td>
+                <td class="credit"><input type="text" placeholder="Credit" value="4" disabled></td>
+                <td class="grade">
+                    <select>
+                            <option value="S">S</option><option value="A+">A+</option><option value="A">A</option><option value="B+">B+</option><option value="B">B</option><option value="C+">C+</option><option value="C">C</option><option value="D">D</option><option value="P">P</option><option value="F">F</option>
+                        </select>
+                </td>            </tr>
+                <tr>
+                    <td class="sl-no">7</td>
+                    <td class="subject">sub7</td>
+                    <td class="credit"><input type="text" placeholder="Credit" value="4" disabled></td>
+                    <td class="grade">
+                        <select>
+                            <option value="S">S</option><option value="A+">A+</option><option value="A">A</option><option value="B+">B+</option><option value="B">B</option><option value="C+">C+</option><option value="C">C</option><option value="D">D</option><option value="P">P</option><option value="F">F</option>
+                        </select>
+                    </td>            </tr>
+            <!-- End of added subjects -->
+        </tbody>
+    </table>
+    <div class="calculate-wrapper">
+        <button class="clear-button" onclick="clearAll('sem8')">CLEAR</button>
+        <div class="sgpa-wrapper">
+            <input type="text" class="sgpa-input" placeholder="SGPA">
+            <button class="calculate-button" onclick="calculateSGPA('sem8')">Calculate SGPA</button>
+        </div>
+        
+    </div>
+</div>
+<script src="script.js">
+</script>
+</body>
+</html>
